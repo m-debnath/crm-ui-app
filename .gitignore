@@ -154,3 +154,6 @@ yarn-error.log*
 
 # custom: fonts
 fonts/
+
+# custom: vscode debug
+.vscode/

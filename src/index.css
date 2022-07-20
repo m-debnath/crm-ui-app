@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Tele2SlabWeb;
+  src: url("../public/fonts/Tele2SlabWeb-Regular.woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Tele2SlabWeb;
+  src: url("../public/fonts/Tele2SlabWeb-Bold.woff");
+  font-weight: bold;
+}
+
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Tele2SlabWeb", "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
