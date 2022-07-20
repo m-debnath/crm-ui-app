@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  crm-ui-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+networks:
+  default:
+    name: crm_development
