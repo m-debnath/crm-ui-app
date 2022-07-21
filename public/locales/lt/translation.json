@@ -2,6 +2,11 @@
   "username": "Vartotojo vardas",
   "password": "Slaptažodis",
   "login": "Prisijungti",
-  "version": "Versija",
-  "build": "Sukurti"
+  "build": "Sukurti",
+  "app_name": "OACH CRM Pieteikums",
+  "err_wrong_authentication": "Jūsų įvestas vartotojo vardas arba slaptažodis yra neteisingas.",
+  "err_missing_authorization": "Jūs neturite prieigos prie šio šaltinio. Klauskite administratoriaus.",
+  "err_server_unreachable_development": "Serveryje kyla problemų. Klauskite administratoriaus.",
+  "err_server_unreachable_test": "Serveryje kyla problemų. Klauskite administratoriaus.",
+  "err_server_unreachable_production": "Serveryje kyla problemų. Kreipkitės į aptarnavimo skyrių."
 }

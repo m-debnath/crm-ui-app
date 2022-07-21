@@ -2,6 +2,11 @@
   "username": "Kasutajanimi",
   "password": "Parool",
   "login": "Logi sisse",
-  "version": "Versioon",
-  "build": "Ehitada"
+  "build": "Ehitada",
+  "app_name": "OACH CRM Rakendus",
+  "err_wrong_authentication": "Sisestatud kasutajanimi või parool on vale.",
+  "err_missing_authorization": "Teil ei ole õigust sellele ressursile juurde pääseda. Küsige administraatorilt.",
+  "err_server_unreachable_development": "Serveril on raskusi. Küsige administraatorilt.",
+  "err_server_unreachable_test": "Serveryje kyla problemų. Klauskite administratoriaus.",
+  "err_server_unreachable_production": "Serveril on raskusi. Võtke ühendust teeninduskeskusega."
 }

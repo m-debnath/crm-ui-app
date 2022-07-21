@@ -2,6 +2,11 @@
   "username": "Lietotājvārds",
   "password": "Parole",
   "login": "Pieslēgties",
-  "version": "Versija",
-  "build": "Būvēt"
+  "build": "Būvēt",
+  "app_name": "OACH CRM Pieteikums",
+  "err_wrong_authentication": "Jūsu ievadītais lietotājvārds vai parole ir nepareiza.",
+  "err_missing_authorization": "Jums nav tiesību piekļūt šim resursam. Jautājiet administratoram.",
+  "err_server_unreachable_development": "Serverim ir radušās problēmas. Jautājiet administratoram.",
+  "err_server_unreachable_test": "Serverim ir radušās problēmas. Jautājiet administratoram.",
+  "err_server_unreachable_production": "Serverim ir radušās problēmas. Lūdzu, sazinieties ar servisa dienestu."
 }
