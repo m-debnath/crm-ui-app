@@ -15,6 +15,7 @@ import LocaleContext from "../../LocaleContext";
 import lv_icon from "../assets/images/lv.svg";
 import lt_icon from "../assets/images/lt.svg";
 import ee_icon from "../assets/images/ee.svg";
+import eu_icon from "../assets/images/eu.svg";
 
 const GetFlagIcon = (locale) => {
   switch (locale) {
@@ -25,7 +26,7 @@ const GetFlagIcon = (locale) => {
     case "ee":
       return ee_icon;
     default:
-      return lv_icon;
+      return eu_icon;
   }
 };
 
@@ -83,11 +84,11 @@ const Login = () => {
               <LoginButton type="submit">Login</LoginButton>
             </div>
           </form>
-          <div className="loginFooter flex justify-center gap-1">
+          <div className="loginFooter flex justify-center gap-1 align-middle">
             <p>{`${t("version")} ${process.env.REACT_APP_VERSION}, ${process.env.NODE_ENV} ${t(
               "build"
             )}, July 21, 2023.`}</p>
-            <img className="w-4 h-[auto]" src={GetFlagIcon(i18n.language)} alt="Error" />
+            <img className="w-5 h-[auto]" src={GetFlagIcon(i18n.language)} alt="Error" />
           </div>
         </div>
       </Suspense>
