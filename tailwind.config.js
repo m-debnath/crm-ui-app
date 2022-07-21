@@ -13,6 +13,9 @@ module.exports = {
         green: "#43B02A",
         red: "#CC0033",
       },
+      fontFamily: {
+        RobotoSlab: ["Roboto Slab", "serif"],
+      },
     },
   },
   plugins: [],
