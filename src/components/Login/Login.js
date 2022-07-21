@@ -52,15 +52,15 @@ const Login = () => {
           <div className="brandLogo">
             <img className="mx-[auto]" src={brand_logo} alt="Tele2" />
           </div>
-          <div className="loginHeader">{process.env.REACT_APP_NAME}</div>
-          {/* <ErrorNotify errorMessage="The username or password you have entered is incorrect." /> */}
+          <div className="loginHeader">{t("app_name")}</div>
+          {/* <ErrorNotify errorMessage={t("err_wrong_authentication")} /> */}
           {/* <ErrorNotify errorMessage="You are not authorized to access this resource. Ask an administrator." />
         <ErrorNotify
           errorMessage={`The server is experiencing difficulties. ${process.env.REACT_APP_501_RESPONSE_MESSAGE}`}
         /> */}
           <form action="#" method="">
-            <div className="flex justify-between mt-4 gap-2">
-              <FieldLabel htmlFor="username">{t("username")}:</FieldLabel>
+            <div className="mt-4">
+              <FieldLabel htmlFor="username">{t("username")}</FieldLabel>
               <InputField
                 local_ref={userRef}
                 type="text"
@@ -70,8 +70,9 @@ const Login = () => {
                 id="userNameInput"
               />
             </div>
-            <div className="flex justify-between mt-4 gap-2">
-              <FieldLabel htmlFor="password">{t("password")}:</FieldLabel>
+            <div className="mt-4">
+              <FieldLabel htmlFor="password">{t("password")}</FieldLabel>
+              <br />
               <InputField
                 type="password"
                 required
@@ -81,14 +82,30 @@ const Login = () => {
               />
             </div>
             <div className="loginButtonContainer text-center">
-              <LoginButton type="submit">Login</LoginButton>
+              <LoginButton disabled type="submit">
+                {t("login")}
+              </LoginButton>
             </div>
           </form>
-          <div className="loginFooter flex justify-center gap-1 align-middle">
-            <p>{`${t("version")} ${process.env.REACT_APP_VERSION}, ${process.env.NODE_ENV} ${t(
-              "build"
-            )}, July 21, 2023.`}</p>
-            <img className="w-5 h-[auto]" src={GetFlagIcon(i18n.language)} alt="Error" />
+          <div className="loginFooter flex justify-center gap-2 align-middle">
+            <img
+              className="shadow-sm shadow-slate-500 w-5 h-4"
+              src={GetFlagIcon(i18n.language)}
+              alt="Error"
+            />
+            {}
+            <p>
+              {t("version_info", {
+                env: process.env.NODE_ENV.replace(/^\w/, (c) => c.toUpperCase()),
+                ver: process.env.REACT_APP_VERSION,
+                last_upd: new Date(process.env.REACT_APP_LAST_UPDATED),
+              })}
+            </p>
+            <img
+              className="shadow-sm shadow-slate-500 w-5 h-4"
+              src={GetFlagIcon(i18n.language)}
+              alt="Error"
+            />
           </div>
         </div>
       </Suspense>
