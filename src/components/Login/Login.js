@@ -1,43 +1,40 @@
 import "./Login.css";
 import brand_logo from "./Tele2_Logo_main.png";
+import InputField from "../utils/Forms/InputField";
+import FieldLabel from "../utils/Forms/FieldLabel";
+import LoginButton from "./LoginButton";
 
 const Login = () => {
   return (
     <>
       <div className="loginCard">
         <div className="brandLogo">
-          <img className="mx-[auto]" src={brand_logo} alt="" />
+          <img className="mx-[auto]" src={brand_logo} alt="Tele2" />
         </div>
         <div className="loginHeader">OACH CRM Application</div>
         <form action="#" method="">
-          <div className="loginInputGroup pb-3">
-            <label className="userNameLabel col-span-1 my-[auto]" htmlFor="userNameInput">
-              Username:
-            </label>
-            <input
-              className="loginTextInput"
+          <div className="flex justify-between mt-2">
+            <FieldLabel htmlFor="userNameInput">Username:</FieldLabel>
+            <InputField
               type="text"
+              required
               autoComplete="on"
               name="userNameInput"
               id="userNameInput"
             />
           </div>
-          <div className="loginInputGroup pb-2">
-            <label className="userPasswordLabel col-span-1 my-[auto]" htmlFor="userPasswordInput">
-              Passsword:
-            </label>
-            <input
-              className="loginTextInput"
+          <div className="flex justify-between mt-2">
+            <FieldLabel htmlFor="userNameInput">Passsword:</FieldLabel>
+            <InputField
               type="password"
+              required
               autoComplete="off"
               name="userPasswordInput"
               id="userPasswordInput"
             />
           </div>
           <div className="loginButtonContainer text-center">
-            <button className="loginButton" type="submit">
-              Login
-            </button>
+            <LoginButton type="submit">Login</LoginButton>
           </div>
         </form>
         <div className="loginFooter">Version 0.1.0, Latvia Production, July 21, 2022.</div>
