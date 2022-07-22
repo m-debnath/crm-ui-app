@@ -4,7 +4,7 @@
   "login": "Prisijungti",
   "app_name": "OACH CRM Pieteikums",
   "version_info": "{{ env }} Leidinys {{ ver }}, {{ last_upd, long }}",
-  "err_wrong_authentication": "Jūsų įvestas vartotojo vardas arba slaptažodis yra neteisingas.",
+  "err_wrong_authentication": "Neteisingas vartotojo vardas arba slaptažodis.",
   "err_missing_authorization": "Jūs neturite prieigos prie šio šaltinio. Klauskite administratoriaus.",
   "err_server_unreachable_development": "Serveryje kyla problemų. Klauskite administratoriaus.",
   "err_server_unreachable_test": "Serveryje kyla problemų. Klauskite administratoriaus.",

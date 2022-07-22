@@ -4,7 +4,7 @@
   "login": "Login",
   "app_name": "OACH CRM Application",
   "version_info": "{{ env }} Build {{ ver }}, {{ last_upd, long }}.",
-  "err_wrong_authentication": "The username or password you have entered is incorrect.",
+  "err_wrong_authentication": "Wrong username or password.",
   "err_missing_authorization": "You are not authorized to access this resource. Ask an administrator.",
   "err_server_unreachable_development": "The server is experiencing difficulties. Ask an administrator.",
   "err_server_unreachable_test": "The server is experiencing difficulties. Ask an administrator.",
