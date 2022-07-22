@@ -10,7 +10,6 @@ import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
 
 import LocaleContext from "../../context/LocaleContext";
-import AuthContext from "../../context/AuthContext";
 
 import lv_icon from "../assets/images/lv.svg";
 import lt_icon from "../assets/images/lt.svg";
@@ -18,7 +17,7 @@ import ee_icon from "../assets/images/ee.svg";
 import eu_icon from "../assets/images/eu.svg";
 
 import axios from "../../backend/axios";
-// import AuthContext from "../../context/AuthProvider";
+import AuthContext from "../../context/AuthContext";
 
 const TOKEN_URL = "/api/token/";
 
