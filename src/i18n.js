@@ -12,7 +12,7 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     fallbackLng: process.env.REACT_APP_LOCALE,
-    debug: true,
+    debug: process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test",
 
     interpolation: {
       format: (value, format, lng) => {
