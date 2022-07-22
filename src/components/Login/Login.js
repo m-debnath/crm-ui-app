@@ -1,24 +1,25 @@
-import { Suspense, useState, useRef, useEffect, useContext } from "react";
 import "./Login.css";
 import brand_logo from "../assets/images/Tele2_Logo_main.png";
+
+import { Suspense, useState, useRef, useEffect } from "react";
+
 import FieldLabel from "../utils/Forms/FieldLabel";
 import LoginButton from "./LoginButton";
-import Loading from "../Loading";
-
-import placeholder_icon from "../assets/images/white.svg";
+import ZoomIn from "../../hooks/animations/ZoomIn";
 
 import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
-
 import LocaleContext from "../../context/LocaleContext";
+import Loading from "../Loading";
 
 import lv_icon from "../assets/images/lv.svg";
 import lt_icon from "../assets/images/lt.svg";
 import ee_icon from "../assets/images/ee.svg";
 import eu_icon from "../assets/images/eu.svg";
+import placeholder_icon from "../assets/images/white.svg";
 
 import axios from "../../backend/axios";
-import AuthContext from "../../context/AuthContext";
+import useAuth from "../../hooks/useAuth";
 
 const TOKEN_URL = "/api/token/";
 
@@ -36,7 +37,7 @@ const GetFlagIcon = (locale) => {
 };
 
 const Login = () => {
-  const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useAuth();
 
   const { t } = useTranslation();
   const [locale, setLocale] = useState(i18n.language);
@@ -45,6 +46,7 @@ const Login = () => {
 
   const [user, setUser] = useState("");
   const [pwd, setPwd] = useState("");
+  const [err, setErr] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const [success, setSuccess] = useState(false);
 
@@ -53,7 +55,7 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    setErrMsg("");
+    setErr(false);
   }, [user, pwd]);
 
   const handleSubmit = async (e) => {
@@ -75,6 +77,7 @@ const Login = () => {
       setPwd("");
       setSuccess(true);
     } catch (err) {
+      setErr(true);
       if (!err?.response) {
         setErrMsg("err_server_unreachable_" + process.env.NODE_ENV);
       } else if (err.response?.status === 400) {
@@ -104,16 +107,18 @@ const Login = () => {
                   alt="Error"
                 />
               ) : (
-                <>
-                  <img className="stroke-transparent w-5 h-4" src={placeholder_icon} alt="" />
-                </>
+                <img className="stroke-transparent w-5 h-4" src={placeholder_icon} alt="" />
               )}
-
               <div className="brandLogo">
                 <img className="mx-[auto]" src={brand_logo} alt="Tele2" />
               </div>
               <div className="loginHeader">{t("app_name")}</div>
-              <form onSubmit={handleSubmit.bind(this)}>
+              <div className="flex justify-around">
+                <ZoomIn show={err}>
+                  <span className="errorMessage text-xs text-red-600">{t(errMsg)}</span>
+                </ZoomIn>
+              </div>
+              <form onSubmit={handleSubmit}>
                 <div className="mt-3">
                   <FieldLabel htmlFor="username">{t("username")}</FieldLabel>
                   <input
@@ -147,15 +152,11 @@ const Login = () => {
               </form>
               <div className="loginFooter flex justify-center gap-2 align-middle">
                 <p>
-                  {errMsg ? (
-                    <span className="text-red-600">{t(errMsg)}</span>
-                  ) : (
-                    t("version_info", {
-                      env: process.env.NODE_ENV.replace(/^\w/, (c) => c.toUpperCase()),
-                      ver: process.env.REACT_APP_VERSION,
-                      last_upd: new Date(process.env.REACT_APP_LAST_UPDATED),
-                    })
-                  )}
+                  {t("version_info", {
+                    env: process.env.NODE_ENV.replace(/^\w/, (c) => c.toUpperCase()),
+                    ver: process.env.REACT_APP_VERSION,
+                    last_upd: new Date(process.env.REACT_APP_LAST_UPDATED),
+                  })}
                 </p>
               </div>
             </div>
