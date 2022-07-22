@@ -1,29 +1,17 @@
-import error_icon from "../../assets/images/error-icon.svg";
 import "./ErrorNotify.css";
 
 const ErrorNotify = (props) => {
   return (
-    <div className="flex p-1 h-8 gap-2">
-      <img
+    <div>
+      <p
         className={
           props.errorMessage
-            ? "loginErrorIcon transform transition-all opacity-100 w-6 h-[auto]"
-            : "loginErrorIcon opacity-0 w-6 h-[auto]"
+            ? "transform transition-all text-red-600 text-sm text-bold text-center h-7 pt-2"
+            : "transform transition-all text-transparent text-sm text-bold text-center h-7 pt-2"
         }
-        src={error_icon}
-        alt="Error"
-      />
-      <div>
-        <p
-          className={
-            props.errorMessage
-              ? "transform transition-all text-black text-sm text-bold text-center h-6"
-              : "text-transparent text-sm text-bold text-center h-6"
-          }
-        >
-          {props.errorMessage}
-        </p>
-      </div>
+      >
+        {props.errorMessage}
+      </p>
     </div>
   );
 };

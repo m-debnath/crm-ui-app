@@ -115,10 +115,8 @@ const Login = () => {
               </div>
               <div className="loginHeader">{t("app_name")}</div>
 
-              <ErrorNotify errorMessage={errMsg ? t(errMsg) : ""} />
-
               <form onSubmit={handleSubmit.bind(this)}>
-                <div className="mt-4">
+                <div className="mt-3">
                   <FieldLabel htmlFor="username">{t("username")}</FieldLabel>
                   <input
                     type="text"
@@ -145,6 +143,7 @@ const Login = () => {
                     className="w-full t-2 mr-2 mt-2 p-2 rounded border-2 border-slate-200 shadow-inner hover:border-slate-600 hover:border-2"
                   />
                 </div>
+                <ErrorNotify errorMessage={errMsg ? t(errMsg) : ""} />
                 <div className="loginButtonContainer text-center">
                   <LoginButton type="submit">{t("login")}</LoginButton>
                 </div>
