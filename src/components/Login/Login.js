@@ -3,7 +3,6 @@ import "./Login.css";
 import brand_logo from "../assets/images/Tele2_Logo_main.png";
 import FieldLabel from "../utils/Forms/FieldLabel";
 import LoginButton from "./LoginButton";
-import ErrorNotify from "../utils/Notifications/ErrorNotify";
 import Loading from "../Loading";
 
 import placeholder_icon from "../assets/images/white.svg";
@@ -114,7 +113,6 @@ const Login = () => {
                 <img className="mx-[auto]" src={brand_logo} alt="Tele2" />
               </div>
               <div className="loginHeader">{t("app_name")}</div>
-              <ErrorNotify errorMessage={errMsg ? t(errMsg) : ""} />
               <form onSubmit={handleSubmit.bind(this)}>
                 <div className="mt-3">
                   <FieldLabel htmlFor="username">{t("username")}</FieldLabel>
@@ -140,7 +138,7 @@ const Login = () => {
                     id="userPasswordInput"
                     onChange={(e) => setPwd(e.target.value)}
                     onInvalid={(e) => e.preventDefault()}
-                    className="w-full t-2 mr-2 mt-2 mb-2 p-2 rounded border-2 border-slate-200 shadow-inner hover:border-slate-600 hover:border-2"
+                    className="w-full t-2 mr-2 mt-2 mb-1 p-2 rounded border-2 border-slate-200 shadow-inner hover:border-slate-600 hover:border-2"
                   />
                 </div>
                 <div className="loginButtonContainer text-center">
@@ -149,11 +147,15 @@ const Login = () => {
               </form>
               <div className="loginFooter flex justify-center gap-2 align-middle">
                 <p>
-                  {t("version_info", {
-                    env: process.env.NODE_ENV.replace(/^\w/, (c) => c.toUpperCase()),
-                    ver: process.env.REACT_APP_VERSION,
-                    last_upd: new Date(process.env.REACT_APP_LAST_UPDATED),
-                  })}
+                  {errMsg ? (
+                    <span className="text-red-600">{t(errMsg)}</span>
+                  ) : (
+                    t("version_info", {
+                      env: process.env.NODE_ENV.replace(/^\w/, (c) => c.toUpperCase()),
+                      ver: process.env.REACT_APP_VERSION,
+                      last_upd: new Date(process.env.REACT_APP_LAST_UPDATED),
+                    })
+                  )}
                 </p>
               </div>
             </div>
