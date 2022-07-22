@@ -8,5 +8,6 @@
   "err_missing_authorization": "Jūs neturite prieigos prie šio šaltinio. Klauskite administratoriaus.",
   "err_server_unreachable_development": "Serveryje kyla problemų. Klauskite administratoriaus.",
   "err_server_unreachable_test": "Serveryje kyla problemų. Klauskite administratoriaus.",
-  "err_server_unreachable_production": "Serveryje kyla problemų. Kreipkitės į aptarnavimo skyrių."
+  "err_server_unreachable_production": "Serveryje kyla problemų. Kreipkitės į aptarnavimo skyrių.",
+  "err_missing_user_pwd": "Trūksta vartotojo vardo arba slaptažodžio."
 }

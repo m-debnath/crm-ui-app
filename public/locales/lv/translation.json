@@ -8,5 +8,6 @@
   "err_missing_authorization": "Jums nav tiesību piekļūt šim resursam. Jautājiet administratoram.",
   "err_server_unreachable_development": "Serverim ir radušās problēmas. Jautājiet administratoram.",
   "err_server_unreachable_test": "Serverim ir radušās problēmas. Jautājiet administratoram.",
-  "err_server_unreachable_production": "Serverim ir radušās problēmas. Lūdzu, sazinieties ar servisa dienestu."
+  "err_server_unreachable_production": "Serverim ir radušās problēmas. Lūdzu, sazinieties ar servisa dienestu.",
+  "err_missing_user_pwd": "Trūkst lietotājvārda vai paroles."
 }

@@ -8,5 +8,6 @@
   "err_missing_authorization": "You are not authorized to access this resource. Ask an administrator.",
   "err_server_unreachable_development": "The server is experiencing difficulties. Ask an administrator.",
   "err_server_unreachable_test": "The server is experiencing difficulties. Ask an administrator.",
-  "err_server_unreachable_production": "The server is experiencing difficulties. Please contact service desk."
+  "err_server_unreachable_production": "The server is experiencing difficulties. Please contact service desk.",
+  "err_missing_user_pwd": "Missing username or password."
 }
