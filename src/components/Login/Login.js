@@ -6,6 +6,8 @@ import LoginButton from "./LoginButton";
 import ErrorNotify from "../utils/Notifications/ErrorNotify";
 import Loading from "../Loading";
 
+import placeholder_icon from "../assets/images/white.svg";
+
 import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
 
@@ -96,6 +98,18 @@ const Login = () => {
         <LocaleContext.Provider value={{ locale, setLocale }}>
           <Suspense fallback={<Loading />}>
             <div className="loginCard">
+              {process.env.NODE_ENV === "development" ? (
+                <img
+                  className="shadow-sm shadow-slate-500 w-5 h-4"
+                  src={GetFlagIcon(i18n.language)}
+                  alt="Error"
+                />
+              ) : (
+                <>
+                  <img className="stroke-transparent w-5 h-4" src={placeholder_icon} alt="" />
+                </>
+              )}
+
               <div className="brandLogo">
                 <img className="mx-[auto]" src={brand_logo} alt="Tele2" />
               </div>
@@ -113,8 +127,9 @@ const Login = () => {
                     name="username"
                     id="userNameInput"
                     onChange={(e) => setUser(e.target.value)}
+                    onInvalid={(e) => e.preventDefault()}
                     ref={userRef}
-                    className="w-full t-2 mr-2 mt-2 p-2 rounded border-2 border-slate-200 shadow-inner hover:border-slate-600 hover:border-2 "
+                    className="w-full t-2 mr-2 mt-2 p-2 rounded border-2 border-slate-200 shadow-inner hover:border-slate-600 hover:border-2"
                   />
                 </div>
                 <div className="mt-4">
@@ -126,7 +141,8 @@ const Login = () => {
                     name="password"
                     id="userPasswordInput"
                     onChange={(e) => setPwd(e.target.value)}
-                    className="w-full t-2 mr-2 mt-2 p-2 rounded border-2 border-slate-200 shadow-inner hover:border-slate-600 hover:border-2 "
+                    onInvalid={(e) => e.preventDefault()}
+                    className="w-full t-2 mr-2 mt-2 p-2 rounded border-2 border-slate-200 shadow-inner hover:border-slate-600 hover:border-2"
                   />
                 </div>
                 <div className="loginButtonContainer text-center">
@@ -134,11 +150,6 @@ const Login = () => {
                 </div>
               </form>
               <div className="loginFooter flex justify-center gap-2 align-middle">
-                <img
-                  className="shadow-sm shadow-slate-500 w-5 h-4"
-                  src={GetFlagIcon(i18n.language)}
-                  alt="Error"
-                />
                 <p>
                   {t("version_info", {
                     env: process.env.NODE_ENV.replace(/^\w/, (c) => c.toUpperCase()),
@@ -146,11 +157,6 @@ const Login = () => {
                     last_upd: new Date(process.env.REACT_APP_LAST_UPDATED),
                   })}
                 </p>
-                <img
-                  className="shadow-sm shadow-slate-500 w-5 h-4"
-                  src={GetFlagIcon(i18n.language)}
-                  alt="Error"
-                />
               </div>
             </div>
           </Suspense>
