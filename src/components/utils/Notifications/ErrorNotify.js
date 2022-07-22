@@ -3,10 +3,13 @@ import "./ErrorNotify.css";
 
 const ErrorNotify = (props) => {
   return (
-    <div className="p-1 max-w-sm mx-auto bg-white flex space-x-1">
-      <div className="shrink-0"></div>
+    <div className="flex p-1 h-8 gap-2">
       <img
-        className={props.errorMessage ? "loginErrorIcon w-6 h-[auto]" : "absolute left-[9999px]"}
+        className={
+          props.errorMessage
+            ? "loginErrorIcon transform transition-all opacity-100 w-6 h-[auto]"
+            : "loginErrorIcon opacity-0 w-6 h-[auto]"
+        }
         src={error_icon}
         alt="Error"
       />
@@ -14,8 +17,8 @@ const ErrorNotify = (props) => {
         <p
           className={
             props.errorMessage
-              ? "text-slate-500 px-1 text-sm text-bold text-justify"
-              : "absolute left-[9999px]"
+              ? "transform transition-all text-black text-sm text-bold text-center h-6"
+              : "text-transparent text-sm text-bold text-center h-6"
           }
         >
           {props.errorMessage}
