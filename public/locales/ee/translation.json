@@ -4,10 +4,8 @@
   "login": "Logi sisse",
   "app_name": "OACH CRM Rakendus",
   "version_info": "{{ env }} Väljaanne {{ ver }}, {{ last_upd, long }}.",
-  "err_wrong_authentication": "Sisestatud kasutajanimi või parool on vale.",
-  "err_missing_authorization": "Teil ei ole õigust sellele ressursile juurde pääseda. Küsige administraatorilt.",
-  "err_server_unreachable_development": "Serveril on raskusi. Küsige administraatorilt.",
-  "err_server_unreachable_test": "Serveryje kyla problemų. Klauskite administratoriaus.",
-  "err_server_unreachable_production": "Serveril on raskusi. Võtke ühendust teeninduskeskusega.",
+  "err_wrong_authentication": "Vale kasutajanimi või parool.",
+  "err_missing_authorization": "Kasutajal pole volitust.",
+  "err_server_unreachable": "Server ei vasta.",
   "err_missing_user_pwd": "Kasutajanimi või parool puudub."
 }

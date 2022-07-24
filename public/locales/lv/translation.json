@@ -4,10 +4,8 @@
   "login": "Pieslēgties",
   "app_name": "OACH CRM Pieteikums",
   "version_info": "{{ env }} Izdevums {{ ver }}, {{ last_upd, long }}.",
-  "err_wrong_authentication": "Jūsu ievadītais lietotājvārds vai parole ir nepareiza.",
-  "err_missing_authorization": "Jums nav tiesību piekļūt šim resursam. Jautājiet administratoram.",
-  "err_server_unreachable_development": "Serverim ir radušās problēmas. Jautājiet administratoram.",
-  "err_server_unreachable_test": "Serverim ir radušās problēmas. Jautājiet administratoram.",
-  "err_server_unreachable_production": "Serverim ir radušās problēmas. Lūdzu, sazinieties ar servisa dienestu.",
+  "err_wrong_authentication": "Nepareizs lietotājvārds vai parole.",
+  "err_missing_authorization": "Lietotājs nav autorizēts.",
+  "err_server_unreachable": "Serveris nereaģē.",
   "err_missing_user_pwd": "Trūkst lietotājvārda vai paroles."
 }
