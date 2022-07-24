@@ -7,7 +7,7 @@
     @apply mt-36 m-[auto] w-96 p-10 bg-white rounded-md shadow-md;
   }
   .loginHeader {
-    @apply pt-2 pb-2 text-2xl text-center font-extrabold;
+    @apply pt-2 pb-2 text-2xl text-center font-bold;
   }
   .loginFooter {
     @apply text-xs text-gray-500 text-center;
