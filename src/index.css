@@ -11,3 +11,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* .debugMode {
+  @apply border-red-50 border-2;
+} */
