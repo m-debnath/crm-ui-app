@@ -5,7 +5,7 @@ const ZoomIn = (props) => {
   return (
     <Transition
       show={show}
-      enter="transform transition ease-out duration-200"
+      enter="transform transition ease-out duration-250"
       enterFrom="opacity-0 scale-0"
       enterTo="opacity-100 scale-100"
       leave="transform transition ease-out duration-500"
