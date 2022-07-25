@@ -7,7 +7,7 @@ const useLogout = () => {
   const logout = async () => {
     setAuth({});
     try {
-      const response = await axios.post("/api/token/blacklist/", {
+      await axios.post("/api/token/blacklist/", {
         withCredentials: true,
       });
     } catch (err) {
