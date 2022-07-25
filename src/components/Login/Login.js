@@ -115,7 +115,7 @@ const Login = () => {
               <div className="smallHeader">
                 {process.env.NODE_ENV === "development" ? (
                   <img
-                    className="shadow-sm shadow-slate-500 w-5 h-4 rounded-sm"
+                    className="shadow-sm shadow-slate-500 w-4 h-3"
                     src={GetFlagIcon(i18n.language)}
                     alt={process.env.REACT_APP_LOCALE}
                   />
