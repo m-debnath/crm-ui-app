@@ -23,15 +23,9 @@ import useAuth from "../../hooks/useAuth";
 
 import { useNavigate, useLocation } from "react-router-dom";
 
-const TOKEN_URL = "/api/token/";
+import ParseJwt from "../utils/ParseJwt";
 
-const parseJwt = (token) => {
-  try {
-    return JSON.parse(atob(token.split(".")[1]));
-  } catch (e) {
-    return null;
-  }
-};
+const TOKEN_URL = "/api/token/";
 
 const GetFlagIcon = (locale) => {
   switch (locale) {
@@ -86,12 +80,12 @@ const Login = () => {
         }
       );
       const access = response?.data?.access;
-      const token = parseJwt(access);
+      const token = ParseJwt(access);
       const user_id = token.user_id;
       const username = token.username;
       const name = token.name;
       const last_login = token.last_login;
-      setAuth({ user, access, user_id, username, name, last_login });
+      setAuth({ access, user_id, username, name, last_login });
       setUser("");
       setPwd("");
       navigate(from, { replace: true });

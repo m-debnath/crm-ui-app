@@ -1,7 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
+import LocaleContext from "../../context/LocaleContext";
+import Loading from "../Loading";
+import i18n from "../../i18n";
 import useAxiosPrivate from "../../hooks/useAxiosPrivate";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import Header from "../Header/Header";
 
 const Home = () => {
   const { auth } = useAuth();
@@ -9,6 +13,8 @@ const Home = () => {
   const axiosPrivate = useAxiosPrivate();
   const navigate = useNavigate();
   const location = useLocation();
+
+  const [locale, setLocale] = useState(i18n.language);
 
   useEffect(() => {
     let isMounted = true;
@@ -18,10 +24,8 @@ const Home = () => {
       const response = await axiosPrivate.get(`/api/users/${user_id}/`, {
         signal: controller.signal,
       });
-      isMounted && console.log(response.data);
-      isMounted && setMyUser(await response?.data);
+      isMounted && setMyUser(response?.data);
     };
-
     getMyUser(auth?.user_id).catch((err) => {
       if (err.code !== "ERR_CANCELED") {
         console.error(err);
@@ -37,9 +41,21 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>hi {myUser?.first_name}</h1>
-    </div>
+    <LocaleContext.Provider value={{ locale, setLocale }}>
+      <Suspense fallback={<Loading />}>
+        <div>
+          <Header />
+          <div className="mt-20">
+            <h1>Home</h1>
+            <br />
+            <p>You are logged in!</p>
+            <br />
+            <Link to="/oach">Go to the Oach page</Link>
+            <br />
+          </div>
+        </div>
+      </Suspense>
+    </LocaleContext.Provider>
   );
 };
 
