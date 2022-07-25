@@ -112,35 +112,31 @@ const Login = () => {
         <Suspense fallback={<Loading />}>
           <div className="h-full flex justify-around">
             <div className="mt-[5%] w-96 p-10 bg-white rounded-md shadow-md">
-              <div className={`smallHeader ${debug ? "debugMode" : ""}`}>
+              <div className="smallHeader">
                 {process.env.NODE_ENV === "development" ? (
                   <img
-                    className="shadow-sm shadow-slate-500 w-5 h-4"
+                    className="shadow-sm shadow-slate-500 w-5 h-4 rounded-sm"
                     src={GetFlagIcon(i18n.language)}
-                    alt="Error"
+                    alt={process.env.REACT_APP_LOCALE}
                   />
                 ) : (
                   <img className="stroke-transparent w-5 h-4" src={placeholder_icon} alt="" />
                 )}
               </div>
-              <div className={`brandLogo ${debug ? "debugMode" : ""}`}>
+              <div className="brandLogo">
                 <img className="mx-[auto]" src={brand_logo} alt="Tele2" />
               </div>
-              <div
-                className={`pt-2 pb-2 text-2xl text-center font-bold ${debug ? "debugMode" : ""}`}
-              >
-                {t("app_name")}
-              </div>
-              <div className={`flex justify-around h-5 ${debug ? "debugMode" : ""}`}>
+              <div className="pt-2 text-2xl text-center font-bold">{t("app_name")}</div>
+              <div className="flex justify-around h-5">
                 <ZoomIn show={err}>
                   <span className="errorMessage text-xs font-semibold text-red-600">
                     {errMsg ? t(errMsg) : ""}
                   </span>
                 </ZoomIn>
               </div>
-              <div className={`${debug ? "debugMode" : ""}`}>
+              <div>
                 <form onSubmit={handleSubmit}>
-                  <div className="relative z-0 mb-6 mt-3 w-full group">
+                  <div className="relative z-0 mb-6 mt-5 w-full group">
                     <input
                       type="text"
                       name="username"
@@ -212,7 +208,6 @@ const Login = () => {
                         {t("login")}
                       </button>
                     )}
-                    {/* <LoginButton type="submit">{t("login")}</LoginButton> */}
                   </div>
                 </form>
               </div>
