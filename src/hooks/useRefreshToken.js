@@ -14,8 +14,7 @@ const useRefreshToken = () => {
     const user_id = token.user_id;
     const username = token.username;
     const name = token.name;
-    const last_login = token.last_login;
-    setAuth({ access, user_id, username, name, last_login });
+    setAuth({ access, user_id, username, name });
     setAuth((prev) => {
       return {
         ...prev,
@@ -23,7 +22,6 @@ const useRefreshToken = () => {
         user_id: user_id,
         username: username,
         name: name,
-        last_login: last_login,
       };
     });
     return response.data.access;
