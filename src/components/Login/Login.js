@@ -133,14 +133,14 @@ const Login = () => {
               </div>
               <div className={`flex justify-around h-5 ${debug ? "debugMode" : ""}`}>
                 <ZoomIn show={err}>
-                  <span className="errorMessage text-xs text-red-600">
+                  <span className="errorMessage text-xs font-semibold text-red-600">
                     {errMsg ? t(errMsg) : ""}
                   </span>
                 </ZoomIn>
               </div>
               <div className={`${debug ? "debugMode" : ""}`}>
                 <form onSubmit={handleSubmit}>
-                  <div className="relative z-0 mb-6 mt-4 w-full group">
+                  <div className="relative z-0 mb-6 mt-3 w-full group">
                     <input
                       type="text"
                       name="username"
