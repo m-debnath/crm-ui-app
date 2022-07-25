@@ -1,7 +1,9 @@
 {
+  "loading": "Ielādēta...",
   "username": "Lietotājvārds",
   "password": "Parole",
   "login": "Pieslēgties",
+  "persist_login": "Atceries mani",
   "app_name": "OACH CRM Pieteikums",
   "version_info": "{{ env }} Izdevums {{ ver }}, {{ last_upd, long }}.",
   "err_wrong_authentication": "Nepareizs lietotājvārds vai parole.",

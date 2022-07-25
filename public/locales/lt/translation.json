@@ -1,7 +1,9 @@
 {
+  "loading": "Įkeliama...",
   "username": "Vartotojo vardas",
   "password": "Slaptažodis",
   "login": "Prisijungti",
+  "persist_login": "Prisimink mane",
   "app_name": "OACH CRM Pieteikums",
   "version_info": "{{ env }} Leidinys {{ ver }}, {{ last_upd, long }}",
   "err_wrong_authentication": "Neteisingas vartotojo vardas arba slaptažodis.",

@@ -1,7 +1,9 @@
 {
+  "loading": "Laaditakse...",
   "username": "Kasutajanimi",
   "password": "Parool",
   "login": "Logi sisse",
+  "persist_login": "Mäleta mind",
   "app_name": "OACH CRM Rakendus",
   "version_info": "{{ env }} Väljaanne {{ ver }}, {{ last_upd, long }}.",
   "err_wrong_authentication": "Vale kasutajanimi või parool.",

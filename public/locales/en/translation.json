@@ -1,7 +1,9 @@
 {
+  "loading": "Loading...",
   "username": "Username",
   "password": "Password",
   "login": "Login",
+  "persist_login": "Remember me",
   "app_name": "OACH CRM Application",
   "version_info": "{{ env }} Build {{ ver }}, {{ last_upd, long }}.",
   "err_wrong_authentication": "Wrong username or password.",
