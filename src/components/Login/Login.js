@@ -129,9 +129,9 @@ const Login = () => {
               <div className="pt-2 text-2xl text-center font-bold">{t("app_name")}</div>
               <div className="flex justify-around h-5">
                 <ZoomIn show={err}>
-                  <span className="errorMessage text-xs font-semibold text-red-600">
+                  <div className="mt-1 text-xs font-semibold text-red-500">
                     {errMsg ? t(errMsg) : ""}
-                  </span>
+                  </div>
                 </ZoomIn>
               </div>
               <div>
@@ -196,14 +196,14 @@ const Login = () => {
                       <button
                         disabled
                         type="button"
-                        className="text-white bg-orange-400 hover:bg-orange-500 font-bold rounded-md px-6 py-2 dark:bg-orange-400 dark:hover:bg-orange-500 inline-flex items-center translate-y-0.5"
+                        className="text-white bg-orange-400 hover:bg-opacity-90 font-bold rounded-md px-6 py-2 dark:bg-orange-400 dark:hover:bg-orange-500 inline-flex items-center translate-y-0.5"
                       >
                         {t("login")}
                       </button>
                     ) : (
                       <button
                         type="submit"
-                        className="text-white bg-orange-400 hover:bg-orange-500 font-bold rounded-md px-6 py-2 dark:bg-orange-400 dark:hover:bg-orange-500 focus:outline-none shadow-sm shadow-black active:shadow-none active:translate-y-0.5"
+                        className="text-white bg-orange-400 hover:bg-opacity-90 font-bold rounded-md px-6 py-2 dark:bg-orange-400 dark:hover:bg-orange-500 focus:outline-none shadow-sm shadow-black active:shadow-none active:translate-y-0.5"
                       >
                         {t("login")}
                       </button>
